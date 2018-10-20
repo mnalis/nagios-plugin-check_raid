@@ -30,6 +30,9 @@ our %options = (
 
 	# check status of BBU
 	bbu_monitoring => 0,
+
+	# check status of Fans
+	fan_monitoring => 1,
 );
 
 # return list of programs this plugin needs

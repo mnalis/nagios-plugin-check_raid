@@ -91,6 +91,10 @@ $mp->add_arg(
 	spec => 'bbu-monitoring',
 	help => 'Enable experimental monitoring of the BBU status',
 );
+$mp->add_arg(
+	spec => 'no-fans',
+	help => 'Disable monitoring of Fan status',
+);
 
 $mp->getopts;
 
@@ -107,6 +111,9 @@ if ($mp->opts->warnonly) {
 }
 if ($mp->opts->get('bbu-monitoring')) {
 	$plugin_options{options}{bbu_monitoring} = 1;
+}
+if ($mp->opts->get('no-fans')) {
+	$plugin_options{options}{fan_monitoring} = 0;
 }
 
 # setup state flags
